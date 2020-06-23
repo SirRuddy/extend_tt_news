@@ -1,0 +1,68 @@
+plugin.tt_news.genericmarkers {
+  newsadresse = COA
+  newsadresse {
+    10 = RECORDS
+    10 {
+      source.dataWrap = DB:tt_news:{GP:tx_ttnews|tt_news}:tx_extendttnews_adress
+      source.wrap3 = {|}
+      source.insertData = 1
+      tables = tt_address
+      conf.tt_address = COA
+      conf.tt_address {
+        1 = TEXT
+        1.field = company
+        1.wrap = <p class="lead"><span itemprop="name">|</span></p>
+        2 = TEXT
+        2.field = address
+        2.wrap = <p itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span itemprop="streetAddress">|</span><br>
+        3 = TEXT
+        3.field = zip
+        3.wrap = <span itemprop="postalCode">|</span>&nbsp;
+        4 = TEXT
+        4.field = city
+        4.wrap = <span itemprop="addressLocality">|</span><br>
+        5 = TEXT
+        5.field = country
+        5.wrap = <span itemprop="addressCountry">|</span></p>
+        6 = TEXT
+        6.field = phone
+        6.wrap = <p>Tel.: <span itemprop="telephone">|</span><br>
+        7 = TEXT
+        7.field = fax
+        7.wrap = Fax: <span itemprop="faxNumber">|</span></p>
+        8 = TEXT
+        8.field = email
+        8.typolink.parameter.field = email
+        8.typolink.ATagParams = class="email"
+        8.dataWrap = |
+        8.wrap = <p>Email: <span itemprop="email">|</span><br>
+        9 = TEXT
+        9.field = www
+        9.typolink.parameter.field = www
+        9.typolink.ATagParams = class="internet" rel="nofollow"
+        9.typolink.extTarget = _blank
+        9.dataWrap = |
+        9.wrap = Web:&nbsp;|</p>
+      }
+    stdWrap.wrap = <div class="well" itemscope itemtype="https://schema.org/Organization"><p><strong><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> Weitere Informationen erhalten Sie hier:</strong></p>|</div>
+    stdWrap.required = 1    
+    }
+  }
+  data = tx_extendttnews_video, tx_extendttnews_video_discription
+   
+  video = COA
+  video {
+    10 = TEXT
+    10.field = tx_extendttnews_video
+    10.wrap = <h3><span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> Video zu diesem Thema</h3><div class="embed-responsive embed-responsive-16by9" itemprop="associatedMedia" itemscope itemtype="https://schema.org/MediaObject"><iframe class="embed-responsive-item" src="https://www.youtube.com/embed/|" itemprop="embedURL" allowfullscreen></iframe></div>
+    10.if.isTrue.field = tx_extendttnews_video
+  }
+
+  video_discription = COA
+  video_discription {
+    10 = TEXT
+    10.field = tx_extendttnews_video_discription
+    10.wrap = <p class="news-single-imgcaption">|</p>
+    10.if.isTrue.field = tx_extendttnews_video_discription
+  }
+}
