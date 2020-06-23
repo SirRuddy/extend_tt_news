@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+    <meta type="array">
+        <type>database</type>
+        <description>Language labels for database tables/fields belonging to extension 'extend_tt_news'</description>
+    </meta>
+    <data type="array">
+        <languageKey index="default" type="array">
+            <label index="tt_news.tx_extendttnews_adress">Adress</label>
+            <label index="tt_news.tx_extendttnews_video">Video URL (YouTube-Code)</label>
+            <label index="tt_news.tx_extendttnews_video_discription">Video Description</label>
+        </languageKey>
+        <languageKey index="de" type="array">
+            <label index="tt_news.tx_extendttnews_adress">Adresse</label>
+            <label index="tt_news.tx_extendttnews_video">Video URL (YouTube-Code)</label>
+            <label index="tt_news.tx_extendttnews_video_discription">Video Beschreibung</label>
+        </languageKey>
+    </data>
+</T3locallang>
