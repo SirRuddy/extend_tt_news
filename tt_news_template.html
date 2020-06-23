@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<!--
+    IMPORTANT: The stylesheet link below is only for testing the template file directly in a browser while editing it.
+    On the website the css styles for tt_news have to be include with the static TS template "default CSS style (tt_news)" or
+    with an external file (see tt_news/res/tt_news_v2_styles.css) which you include via TypoSript in the "page" object.
+
+ -->
+<title>tt_news Template</title>
+<meta charset="utf-8" />
+<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+<link href="../css/galabau-style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<h3>TEMPLATE_SINGLE</h3>
+<em>This subpart is used to display single news items</em><br />
+<br />
+<br />
+<!-- ###TEMPLATE_SINGLE### begin
+  This subpart is used to display single news items
+-->
+    <nav>
+      <ul class="pager">
+          ###PREV_ARTICLE###
+            ###NEXT_ARTICLE###
+        </ul>
+    </nav>
+
+    <article itemscope itemtype="https://schema.org/Article">
+      <div itemprop="mainEntityOfPage">
+       ###NEWS_CATEGORY_ROOTLINE###
+        <p class="news-single-timedata">###NEWS_DATE###</p>
+        <div class="page-header" itemprop="headline">
+          <h1 itemprop="name">###NEWS_TITLE###</h1>
+        </div>
+        <div itemprop="articleBody">
+          ###NEWS_SUBHEADER###
+          ###NEWS_IMAGE###
+          ###NEWS_CONTENT###
+          ###NEWS_AUTHOR###
+          ###GENERIC_VIDEO###
+          ###GENERIC_VIDEO_DISCRIPTION###
+        </div>
+        <div itemprop="publisher" itemscope itemtype="https://schema.org/Organization">
+          <div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+            &nbsp;
+            <meta itemprop="url" content="https://www.soll-galabau.de/fileadmin/images/publisher-logo.jpg">
+            <meta itemprop="width" content="248">
+            <meta itemprop="height" content="60">
+          </div>
+          <meta itemprop="name" content="Beschaffungsdienst GaLaBau">
+        </div>
+      </div>
+    </article>
+      
+    ###TEXT_RELATED###
+    ###NEWS_RELATED###
+    
+    ###TEXT_FILES###
+    ###FILE_LINK###
+    
+  ###TEXT_LINKS###
+  ###NEWS_LINKS###
+    
+    ###GENERIC_NEWSADRESSE###
+
+    <nav>
+      <ul class="pager">
+          ###PREV_ARTICLE###
+            ###NEXT_ARTICLE###
+        </ul>
+    </nav>
+    ###TEXT_RELATEDBYCATEGORY###
+    ###NEWS_RELATEDBYCATEGORY###
+<!-- ###TEMPLATE_SINGLE### end -->
+
+</body>
+</html>
